@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="blue_fragment">Blue Fragment</string>
+    <string name="blue_child_fragment">Blue child Fragment</string>
+    <string name="green_child_fragment">Green child Fragment</string>
+    <string name="green_fragment">Green Fragment</string>
+    <string name="orange_child_fragment">Orange Child Fragment</string>
+    <string name="orange_fragment">Orange Fragment</string>
+    <string name="red_child_fragment">Red Child Fragment</string>
+    <string name="red_fragment">Red Fragment</string>
+</resources>

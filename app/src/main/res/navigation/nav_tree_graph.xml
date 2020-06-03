@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tree_graph"
+    app:startDestination="@id/blueTreeFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/blueTreeFragment"
+        android:name="com.example.appit.myapplication.trees.BlueTreeFragment"
+        android:label="Blue Tree"
+        tools:layout="@layout/fragment_blue_tree" >
+        <action
+            android:id="@+id/action_blueTreeFragment_to_blueChildFragment"
+            app:destination="@id/blueChildFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+      />
+    </fragment>
+    <fragment
+        android:id="@+id/redTreeFragment"
+        android:name="com.example.appit.myapplication.trees.RedTreeFragment"
+        android:label="Red Tree"
+        tools:layout="@layout/fragment_red_tree" >
+        <action
+            android:id="@+id/action_redTreeFragment_to_redChildFragment"
+            app:destination="@id/redChildFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/greenTreeFragment"
+        android:name="com.example.appit.myapplication.trees.GreenTreeFragment"
+        android:label="Green Tree"
+        tools:layout="@layout/fragment_green_tree" >
+        <action
+            android:id="@+id/action_greenTreeFragment_to_greenChildFragment"
+            app:destination="@id/greenChildFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/redChildFragment"
+        android:name="com.example.appit.myapplication.trees.RedChildFragment"
+        android:label="fragment_red_child"
+        tools:layout="@layout/fragment_red_child" >
+        <action
+            android:id="@+id/action_redChildFragment_to_completeTreeFragment"
+            app:destination="@id/completeTreeFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_redChildFragment_to_orangeTreeFragment"
+            app:destination="@id/nav_graph_orange"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/greenChildFragment"
+        android:name="com.example.appit.myapplication.trees.GreenChildFragment"
+        android:label="fragment_green_child"
+        tools:layout="@layout/fragment_green_child">
+        <action
+            android:id="@+id/action_greenChildFragment_to_completeTreeFragment"
+            app:destination="@id/completeTreeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.greenchild.com/users/{id}?name={name}" />
+    </fragment>
+    <fragment
+        android:id="@+id/blueChildFragment"
+        android:name="com.example.appit.myapplication.trees.BlueChildFragment"
+        android:label="fragment_blue_child"
+        tools:layout="@layout/fragment_blue_child" >
+        <action
+            android:id="@+id/action_blueChildFragment_to_completeTreeFragment"
+            app:destination="@id/completeTreeFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="Stranger" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeTreeFragment"
+        android:name="com.example.appit.myapplication.trees.CompleteTreeFragment"
+        android:label="fragment_complete_tree"
+        tools:layout="@layout/fragment_complete_tree"
+        >
+        <argument
+            android:name="message"
+            app:argType="string"
+            android:defaultValue="Stranger" />
+
+        <action
+            android:id="@+id/action_completeTreeFragment_to_blueTreeFragment"
+            app:destination="@id/blueTreeFragment"
+            app:popUpTo="@id/blueTreeFragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_completeTreeFragment_to_redTreeFragment"
+            app:destination="@id/redTreeFragment"
+            app:popUpTo="@id/redTreeFragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_completeTreeFragment_to_greenTreeFragment"
+            app:destination="@id/greenTreeFragment"
+            app:popUpTo="@id/greenTreeFragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+
+        <argument
+            android:name="user"
+            app:argType="com.example.appit.myapplication.trees.User" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/nav_graph_orange"
+        app:startDestination="@id/orangeTreeFragment" >
+        <fragment
+            android:id="@+id/orangeTreeFragment"
+            android:name="com.example.appit.myapplication.trees.OrangeTreeFragment"
+            android:label="fragment_orange_tree"
+            tools:layout="@layout/fragment_orange_tree">
+            <action
+                android:id="@+id/action_orangeTreeFragment_to_orangeChildFragment"
+                app:destination="@id/orangeChildFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"/>
+        </fragment>
+        <fragment
+            android:id="@+id/orangeChildFragment"
+            android:name="com.example.appit.myapplication.trees.OrangeChildFragment"
+            android:label="fragment_orange_child"
+            tools:layout="@layout/fragment_orange_child" >
+            <action
+                android:id="@+id/action_orangeChildFragment_to_redTreeFragment"
+                app:destination="@id/redTreeFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popUpTo="@id/redTreeFragment"
+                app:popUpToInclusive="true"/>
+        </fragment>
+    </navigation>
+
+    <action android:id="@+id/action_global_blueTreeFragment" app:destination="@id/blueTreeFragment"/>
+</navigation>
